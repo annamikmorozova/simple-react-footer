@@ -1,0 +1,49 @@
+$background-color: bisque
+$titles-font: 22px
+$smaller-screen: 650px
+
+.footer-container
+    margin-top: 20px
+    height: fit-content
+    justify-content: space-between
+    background-color: $background-color
+    display: flex
+    flex-direction: row
+    padding: 30px
+    flex-wrap: wrap
+
+.social-media
+    display: flex
+    flex-direction: row
+    justify-content: center
+
+.social-media-col
+    display: flex
+    flex-direction: column
+
+.img-logo
+    max-height: 70px
+    min-height: 70px
+    border-radius: 35%
+    width: auto
+
+.socialMediaLogo
+    margin-right: 5px
+
+.titles
+    font-size: $titles-font
+    align-self: center
+
+.col
+    margin-right: 5px
+    width: 600px
+    @media (min-width: $smaller-screen)
+        margin-right: 10px
+        min-width: auto
+
+.col-about
+    margin-right: 5px
+    width: 600px
+    @media (min-width: $smaller-screen)
+        margin-right: 10px
+        min-width: auto

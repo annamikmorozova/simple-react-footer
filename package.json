@@ -1,0 +1,46 @@
+{
+  "name": "simple-react-footer",
+  "version": "1.0.0",
+  "description": "Simple Footer for React Applications",
+  "main": "./lib/Footer.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "author": "Anna Morozova",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "react-component",
+    "footer",
+    "react-footer",
+    "responsive-design",
+    "front-end",
+    "simple-react-footer",
+    "simple-react-component"
+  ],
+  "peerDependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.5",
+    "babel-loader": "^8.2.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "sass": "^1.29.0",
+    "react-dom": "^17.0.1",
+    "sass-loader": "^10.1.0",
+    "css-loader": "^5.0.1",
+    "node-sass": "^5.0.0",
+    "path": "^0.12.7",
+    "react-icons": "^3.11.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.4.0",
+    "webpack-cli": "^4.2.0",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1"
+  }
+}
