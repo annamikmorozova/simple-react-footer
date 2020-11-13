@@ -10,42 +10,48 @@ class Footer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            imgLogo: this.props.imgLogo,
             description: this.props.description,
             socialMedia: this.props.socialMedia,
             resourcesName: this.props.resourcesName,
-            resources: this.props.resources
+            resources: this.props.resources,
+            copyright: this.props.copyright
         }
     }
 	render() {
 		return (
             <div className="footer-container">
-                <div className="col-about">
-                    <div>
-                        <img className="img-logo" src={this.state.imgLogo.imgUrl} alt={this.state.imgLogo.alt} />
-                        <div className="titles">About</div>
+
+                <div className="first-row">
+
+                    <div className="col-about">
                         <div>
-                            {this.state.description}
+                            <div className="titles">About</div>
+                            <div className="description">{this.state.description}</div>
                         </div>
                     </div>
+
+                    <div>
+                        <div className="titles">{this.state.resourcesName}</div>
+                        {this.state.resources.map(resource => (
+                            <div key={resource.id}>
+                                <a href="#" target="_blank" className="resources">{resource}</a>
+                            </div>
+                        ))}
+                    </div>
                 </div>
+
                 <div className="social-media-col col">
-                    <div className="titles">Follow us:</div>
+                    <div className="titles">Stay connected:</div>
                     <div className="social-media">
-                        <a href="#" target="_blank" className="socialMediaLogo"><ImFacebook2 color="black" size={22}/> </a>
-                        <a href="#" target="_blank" className="socialMediaLogo"><FaTwitterSquare color="black"size={22}/> </a>
-                        <a href="#" target="_blank" className="socialMediaLogo"><ImInstagram color="black" size={22}/> </a>
-                        <a href="#" target="_blank" className="socialMediaLogo"><ImLinkedin color="black" size={22}/> </a>
+                        <a href="#" target="_blank" className="socialMediaLogo"><ImFacebook2 color="black" size={25}/> </a>
+                        <a href="#" target="_blank" className="socialMediaLogo"><FaTwitterSquare color="black"size={25}/> </a>
+                        <a href="#" target="_blank" className="socialMediaLogo"><ImInstagram color="black" size={25}/> </a>
+                        <a href="#" target="_blank" className="socialMediaLogo"><ImLinkedin color="black" size={25}/> </a>
                     </div>
                 </div>
 
                 <div>
-                    <div className="titles">{this.state.resourcesName}</div>
-                    {this.state.resources.map(resource => (
-                        <div key={resource.id}>
-                            <div>{resource}</div>
-                        </div>
-                    ))}
+                    <div className="copyright">Copyright &copy; {this.state.copyright}</div>
                 </div>
             </div>
         )
@@ -53,10 +59,6 @@ class Footer extends React.Component {
 }
 
 Footer.propTypes = {
-    imgLogo: PropTypes.shape({
-        imgUrl: PropTypes.string,
-        alt: PropTypes.string
-    }),
     description: PropTypes.string,
     socialMedia: PropTypes.arrayOf(
         PropTypes.shape({
@@ -65,7 +67,8 @@ Footer.propTypes = {
         })
     ),
     resourcesName: PropTypes.string,
-    resources: PropTypes.arrayOf(PropTypes.string)
+    resources: PropTypes.arrayOf(PropTypes.string),
+    copyright: PropTypes.string
 };
 
 export default Footer;

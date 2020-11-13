@@ -1,6 +1,14 @@
+@import url(https://fonts.googleapis.com/css?family=Mulish:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic)
 $background-color: bisque
-$titles-font: 22px
+$titles-font: 20px
+$secondary-text-font: 16px
 $smaller-screen: 650px
+$main-font: "Mulish", regular
+$hover-color: blue
+
+.first-row
+    display: flex
+    flex-direction: row
 
 .footer-container
     margin-top: 20px
@@ -8,14 +16,15 @@ $smaller-screen: 650px
     justify-content: space-between
     background-color: $background-color
     display: flex
-    flex-direction: row
-    padding: 30px
+    flex-direction: column
+    padding: 10px 30px 10px 30px
     flex-wrap: wrap
 
 .social-media
     display: flex
     flex-direction: row
     justify-content: center
+    margin-top: 15px
 
 .social-media-col
     display: flex
@@ -30,20 +39,38 @@ $smaller-screen: 650px
 .socialMediaLogo
     margin-right: 5px
 
+.socialMediaLogo:hover
+    color: $hover-color
+
 .titles
     font-size: $titles-font
     align-self: center
+    font-family: $main-font
+
+.description
+    font-family: $main-font
+    font-size: $secondary-text-font
+    margin-right: 30px
+    margin-bottom: 10px
+
+.resources
+    font-family: $main-font
+    font-size: $secondary-text-font
+    color: black
+
+.resources:hover
+    color: $hover-color
+
+.copyright
+    text-align: center
+    font-size: 18px
+    margin-top: 10px
 
 .col
-    margin-right: 5px
-    width: 600px
-    @media (min-width: $smaller-screen)
-        margin-right: 10px
-        min-width: auto
+    margin-right: 10px
+    min-width: auto
 
 .col-about
-    margin-right: 5px
-    width: 600px
-    @media (min-width: $smaller-screen)
-        margin-right: 10px
-        min-width: auto
+    margin-right: 15px
+    min-width: auto
+    display: contents
