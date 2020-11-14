@@ -13,7 +13,8 @@ class Footer extends React.Component {
         super(props);
         this.state = {
             description: this.props.description,
-            resourcesName: this.props.resourcesName,
+            title1: this.props.title1,
+            title2: this.props.title2,
             resources: this.props.resources,
             copyright: this.props.copyright,
             linkedin: this.props.linkedin,
@@ -32,23 +33,23 @@ class Footer extends React.Component {
                 <div className="first-row">
                     <div className="col-about">
                         <div>
-                            <div className="titles">About</div>
+                            <div className="titles">{this.state.title1}</div>
                             <div className="description">{this.state.description}</div>
                         </div>
                     </div>
 
                     <div>
-                        <div className="titles">{this.state.resourcesName}</div>
+                        <div className="titles">{this.state.title2}</div>
                         {this.state.resources.map(resource => (
                             <div key={resource.id}>
-                                <a href="#" target="_blank" className="resources">{resource}</a>
+                                <a href={`${resource.link}`} target="_blank" className="resources">{resource.name}</a>
                             </div>
                         ))}
                     </div>
                 </div>
 
                 <div className="social-media-col col">
-                    <div className="titles">Stay connected:</div>
+                    <div className="titles">Stay connected</div>
                     <div className="social-media">
                         {this.state.facebook != undefined ? <a href={`https://www.facebook.com/${this.state.facebook}`} target="_blank" className="socialMediaLogo"><ImFacebook2 color="black" size={25}/> </a> : ""}
                         {this.state.linkedin != undefined ? <a href={`https://www.linkedin.com/in/${this.state.linkedin}`} target="_blank" className="socialMediaLogo"><FaTwitterSquare color="black"size={25}/> </a> : ""}
@@ -75,8 +76,14 @@ Footer.propTypes = {
     linkedin: PropTypes.string,
     youtube: PropTypes.string,
     pinterest: PropTypes.string,
-    resourcesName: PropTypes.string,
-    resources: PropTypes.arrayOf(PropTypes.string),
+    title1: PropTypes.string,
+    title2: PropTypes.string,
+    resources: PropTypes.arrayOf(
+        PropTypes.shape({
+            name: PropTypes.string,
+            link: PropTypes.string
+        })
+    ),
     copyright: PropTypes.string
 };
 
