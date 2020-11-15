@@ -35,7 +35,7 @@ class Footer extends React.Component {
                     : "" }
 
                     {this.props.col3 != undefined ?
-                    <div>
+                    <div style={{marginRight: "20px"}}>
                         <div style={{ color: this.props.fontColor || "black" }} className="third-title">{this.props.title3}</div>
                         {this.props.col3.map(resource => (
                             <div key={resource.id}>
