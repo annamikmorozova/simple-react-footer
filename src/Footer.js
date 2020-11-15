@@ -11,57 +11,44 @@ import {ImYoutube} from "react-icons/im";
 class Footer extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            description: this.props.description,
-            title1: this.props.title1,
-            title2: this.props.title2,
-            resources: this.props.resources,
-            copyright: this.props.copyright,
-            linkedin: this.props.linkedin,
-            facebook: this.props.facebook,
-            twitter: this.props.twitter,
-            instagram: this.props.instagram,
-            youtube: this.props.youtube,
-            pinterest: this.props.pinterest
-        }
     }
 
 	render() {
 		return (
-            <div className="footer-container">
+            <div style={{ backgroundColor: this.props.backgroundColor || "bisque" }} className="footer-container">
 
                 <div className="first-row">
                     <div className="col-about">
                         <div>
-                            <div className="titles">{this.state.title1}</div>
-                            <div className="description">{this.state.description}</div>
+                                <div style={{ color: this.props.fontColor || "black" }} className="titles">{this.props.title1}</div> 
+                            <div style={{ color: this.props.fontColor || "black" }} className="description">{this.props.description}</div>
                         </div>
                     </div>
 
                     <div>
-                        <div className="titles">{this.state.title2}</div>
-                        {this.state.resources.map(resource => (
+                        <div style={{ color: this.props.fontColor || "black" }} className="titles">{this.props.title2}</div>
+                        {this.props.resources.map(resource => (
                             <div key={resource.id}>
-                                <a href={`${resource.link}`} target="_blank" className="resources">{resource.name}</a>
+                                <a href={`${resource.link}`} target="_blank" style={{ color: this.props.fontColor || "black" }} className="resources">{resource.name}</a>
                             </div>
                         ))}
                     </div>
                 </div>
 
                 <div className="social-media-col col">
-                    <div className="titles">Stay connected</div>
+                    <div style={{ color: this.props.fontColor || "black" }} className="titles">Stay connected</div>
                     <div className="social-media">
-                        {this.state.facebook != undefined ? <a href={`https://www.facebook.com/${this.state.facebook}`} target="_blank" className="socialMediaLogo"><ImFacebook2 color="black" size={25}/> </a> : ""}
-                        {this.state.linkedin != undefined ? <a href={`https://www.linkedin.com/in/${this.state.linkedin}`} target="_blank" className="socialMediaLogo"><FaTwitterSquare color="black"size={25}/> </a> : ""}
-                        {this.state.instagram != undefined ? <a href={`https://www.instagram.com/${this.state.instagram}`} target="_blank" className="socialMediaLogo"><ImInstagram color="black" size={25}/> </a> : ""}
-                        {this.state.twitter != undefined ? <a href={`https://www.twitter.com/${this.state.twitter}`} target="_blank" className="socialMediaLogo"><ImLinkedin color="black" size={25}/> </a> : ""}
-                        {this.state.pinterest != undefined ? <a href={`https://www.pinterest.com/${this.state.pinterest}`} target="_blank" className="socialMediaLogo"><FaPinterestSquare color="black" size={25}/> </a> : ""}
-                        {this.state.youtube != undefined ? <a href={`https://www.youtube.com/channel/${this.state.youtube}`} target="_blank" className="socialMediaLogo"><ImYoutube color="black" size={25}/> </a> : ""}
+                        {this.props.facebook != undefined ? <a href={`https://www.facebook.com/${this.props.facebook}`} target="_blank" className="socialMediaLogo"><ImFacebook2 color={`${this.props.iconColor || "black" }`} size={25}/> </a> : ""}
+                        {this.props.linkedin != undefined ? <a href={`https://www.linkedin.com/in/${this.props.linkedin}`} target="_blank" className="socialMediaLogo"><FaTwitterSquare color={`${this.props.iconColor || "black" }`} size={25}/> </a> : ""}
+                        {this.props.instagram != undefined ? <a href={`https://www.instagram.com/${this.props.instagram}`} target="_blank" className="socialMediaLogo"><ImInstagram color={`${this.props.iconColor || "black" }`} size={25}/> </a> : ""}
+                        {this.props.twitter != undefined ? <a href={`https://www.twitter.com/${this.props.twitter}`} target="_blank" className="socialMediaLogo"><ImLinkedin color={`${this.props.iconColor || "black" }`} size={25}/> </a> : ""}
+                        {this.props.pinterest != undefined ? <a href={`https://www.pinterest.com/${this.props.pinterest}`} target="_blank" className="socialMediaLogo"><FaPinterestSquare color={`${this.props.iconColor || "black" }`} size={25}/> </a> : ""}
+                        {this.props.youtube != undefined ? <a href={`https://www.youtube.com/channel/${this.props.youtube}`} target="_blank" className="socialMediaLogo"><ImYoutube color={`${this.props.iconColor || "black" }`} size={25}/> </a> : ""}
                     </div>
                 </div>
 
                 <div>
-                    <div className="copyright">Copyright &copy; {this.state.copyright}</div>
+                    <div style={{ color: this.props.fontColor || "black" }} className="copyright">Copyright &copy; {this.props.copyright}</div>
                 </div>
             </div>
         )
@@ -84,7 +71,10 @@ Footer.propTypes = {
             link: PropTypes.string
         })
     ),
-    copyright: PropTypes.string
+    copyright: PropTypes.string,
+    iconColor: PropTypes.string,
+    backgroundColor: PropTypes.string,
+    fontColor: PropTypes.string
 };
 
 export default Footer;
