@@ -27,6 +27,10 @@ npm install simple-react-footer
     youtube={youtube}
     pinterest={pinterest}
     copyright={copyright}
+    iconColor={iconColor}
+    backgroundColor={backgroundColor}
+    fontColor={fontColor}
+    copyrightColor={copyrightColor}
 />;
 ```
 
@@ -55,15 +59,19 @@ npm install simple-react-footer
 | iconColor | `String` | Optional. This is the color of the social media icons. If not specified, the default color is black. |
 | backgroundColor | `String` | Optional. This is the color of the footer's background. If not specified, the default color is bisque. |
 | fontColor | `String` | Optional. This is the color of the font. If not specified, the default color is black. |
+| copyrightColor | `String` | Optional. This is the color of the copyright text. If not specified, the default color is grey. |
 
 
 ### Render might look like this
 ```
+import Footer from "simple-react-footer";
+...
+
 render() {
   const description: "According to wikipedia, the cat (Felis catus) is a domestic species of small carnivorous mammal. It is the only domesticated species in the family Felidae and is often referred to as the domestic cat to distinguish it from the wild members of the family. A cat can either be a house cat, a farm cat or a feral cat; the latter ranges freely and avoids human contact.",
   const title1: "About",
   const title2: "Resources",
-  const title2: "Legal",
+  const title3: "Legal",
   const col2: [
       {
           name: "About",
@@ -101,7 +109,8 @@ render() {
  const youtube: "UCFt6TSF464J8K82xeA?/",
  const iconColor: "black",
  const backgroundColor: "bisque",
- const fontColor: "black"
+ const fontColor: "black",
+ const copyrightColor: "darkgrey"
 };
 ```
 
