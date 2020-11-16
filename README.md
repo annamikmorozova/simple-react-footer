@@ -4,11 +4,11 @@ Simple React Footer is an open-source React.js component. It is a ready to use f
 
 ## Preview
 
-![mainFooter](./mainFooter.png)
+![mainFooter](https://res.cloudinary.com/ditqevvs5/image/upload/v1605490234/simple-react-footer/mainFooter_jlg0hy.png)
 
 ### Smaller Screen Preview
 
-![smallerScreen](./smallerscreen.png)
+![smallerScreen](https://res.cloudinary.com/ditqevvs5/image/upload/v1605490234/simple-react-footer/smallerscreen_zywlze.png)
 
 ## Install
 
