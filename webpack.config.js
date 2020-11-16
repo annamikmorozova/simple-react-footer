@@ -5,10 +5,10 @@ let webpack = require("webpack");
 
 module.exports = {
   mode: "production",
-  entry: "./src/Footer.js",
+  entry: "./src/SimpleReactFooter.js",
   output: {
     path: path.resolve("lib"),
-    filename: "Footer.js",
+    filename: "SimpleReactFooter.js",
     libraryTarget: "commonjs2",
   },
   resolve: {

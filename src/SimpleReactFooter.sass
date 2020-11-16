@@ -3,19 +3,35 @@ $titles-font: 20px
 $secondary-text-font: 16px
 $smaller-screen: 650px
 $main-font: "Mulish", regular
+$letter-spacing: 1px
+$smaller-screen: 870px
 
 .first-row
     display: flex
     flex-direction: row
+    flex-wrap: wrap
+    justify-content: inherit
+    @media (min-width: $smaller-screen)
+        display: flex
+        flex-direction: row
+        flex-wrap: nowrap
 
 .footer-container
     margin-top: 20px
     height: fit-content
+    width: fit-content
     justify-content: space-between
     display: flex
     flex-direction: column
     padding: 10px 30px 10px 30px
     flex-wrap: wrap
+
+.columns
+    margin-right: 0px
+    margin-left: 0px
+    @media (min-width: $smaller-screen)
+        margin-right: 25px
+        margin-left: 25px
 
 .social-media
     display: flex
@@ -39,6 +55,7 @@ $main-font: "Mulish", regular
 %titles
    font-family: $main-font
    font-size: $titles-font 
+   letter-spacing: $letter-spacing
 
 .first-title
     @extend %titles
@@ -52,18 +69,23 @@ $main-font: "Mulish", regular
     @extend %titles
 
 .stay-connected-title
-    @extend %titles
+    font-family: $main-font
+    font-size: $titles-font 
     align-self: center
+    letter-spacing: 2px
 
 .description
     font-family: $main-font
     font-size: $secondary-text-font
+    letter-spacing: $letter-spacing
     margin-right: 30px
     margin-bottom: 10px
+    text-align: justify
 
 .resources
     font-family: $main-font
     font-size: $secondary-text-font
+    letter-spacing: $letter-spacing
     color: black
 
 .resources:hover
@@ -74,13 +96,9 @@ $main-font: "Mulish", regular
     text-align: center
     font-size: 18px
     margin-top: 10px
-
-.col
-    margin-right: 10px
-    min-width: auto
+    letter-spacing: $letter-spacing
 
 .col-about
-    margin-right: 25px
     min-width: auto
     display: flex
     flex-direction: column

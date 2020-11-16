@@ -2,7 +2,7 @@
   "name": "simple-react-footer",
   "version": "1.0.0",
   "description": "Simple Footer for React Applications",
-  "main": "./lib/Footer.js",
+  "main": "./lib/SimpleReactFooter.js",
   "scripts": {
     "build": "webpack"
   },
