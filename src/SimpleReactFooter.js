@@ -33,7 +33,7 @@ class SimpleReactFooter extends React.Component {
                         </div>
                     ))}
                 </div>
-                {this.props.facebook != undefined && this.props.linkedin != undefined && this.props.instagram != undefined && this.props.twitter != undefined && this.props.pinterest != undefined && this.props.youtube != undefined ?
+                {this.props.facebook != undefined || this.props.linkedin != undefined || this.props.instagram != undefined || this.props.twitter != undefined || this.props.pinterest != undefined || this.props.youtube != undefined ?
                 <div className="social-media-col">
                     <div style={{ color: this.props.fontColor || "black" }} className="stay-connected-title">Stay connected</div>
                     <div className="social-media">
